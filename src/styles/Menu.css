@@ -1,0 +1,92 @@
+.menu-page {
+  padding: 20px;
+}
+
+h2 {
+  color: #ff4500;
+  margin-bottom: 15px;
+}
+
+.restaurant-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow: visible;         /* Ensure popup isn't clipped */
+  position: relative;        /* Needed for z-index to work inside */
+}
+
+.restaurant-card {
+  position: relative;        /* ⬅️ Very important for absolute popup */
+  padding: 12px 18px;
+  background-color: #ffe5d0;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 180px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+  z-index: 1;                /* Default layer for card */
+}
+
+.restaurant-card:hover {
+  background-color: #ffc7a1;
+  z-index: 5;                /* Lift up the hovered card */
+}
+
+.inline-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+  width: 230px;
+  background: #fff8f1;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1000;             /* ⬅️ Super high to stay on top */
+  animation: fadeIn 0.25s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.inline-popup h4 {
+  margin: 0 0 5px 0;
+  color: #ff5722;
+  font-size: 1rem;
+}
+
+.inline-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inline-popup li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+.add-btn {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 3px 7px;
+  font-size: 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #e03f00;
+}
