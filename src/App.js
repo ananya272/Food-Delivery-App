@@ -7,7 +7,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
-import TopRestaurants from "./pages/TopRestaurants"; // ✅ path must be correct!
+import TopRestaurants from "./pages/TopRestaurants";
+import Offer from "./pages/Offer"; 
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/offers" element={<Offer />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/top-restaurants" element={<TopRestaurants />} />
         <Route path="/login" element={<Login />} />
